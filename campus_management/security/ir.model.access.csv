@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+campus_management.access_campus_student,access_campus_student,campus_management.model_campus_student,base.group_user,1,1,1,1
+campus_management.access_campus_lecture,access_campus_lecture,campus_management.model_campus_lecture,base.group_user,1,1,1,1
+campus_management.access_campus_course,access_campus_course,campus_management.model_campus_course,base.group_user,1,1,1,1
