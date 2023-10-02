@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="extension_inherit_form" model="ir.ui.view">
+        <field name="name">extension.form.inherit.view</field>
+        <field name="model">campus.student</field>
+         <field name="inherit_id" ref = "campus_management.view_campus_student_form"/>
+        <field name="arch" type="xml">
+            <data>
+           <xpath expr="//field[@name='tag_ids']" position="after">
+            <!-- Added your field -->
+            <field name="parent_name"/>
+        </xpath>
+        </data>
+        </field>
+
+    </record>
+
+
+</odoo>
