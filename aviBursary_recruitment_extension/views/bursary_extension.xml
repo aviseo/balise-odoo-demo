@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+<record id="bursary_extension_inherit_form" model="ir.ui.view">
+        <field name="name">bursary_extension.form.inherit.view</field>
+        <field name="model">bursary.personal_information</field>
+         <field name="inherit_id" ref = "bursary_recruitment.view_bursary_personal_information_form"/>
+        <field name="arch" type="xml">
+            <data>
+           <xpath expr="//field[@name='first_name']" position="after">
+
+            <field name="middle_name"/>
+        </xpath>
+         <xpath expr="//field[@name='email']" position="before">
+            <field name="home_phone"/>
+        </xpath>
+                 <xpath expr="//field[@name='gender']" position="after">
+            <field name="alternative_contact_first_name"/>
+               <field name="alternative_contact_Surname"/>
+               <field name="alternative_contact_marital_status"/>
+               <field name="alternative_contact_id_passport"/>
+               <field name="alternative_contact_phone_number"/>
+               <field name="alternative_contact_email"/>
+               <field name="alternative_contact_street_name"/>
+               <field name="alternative_contact_suburb"/>
+               <field name="alternative_contact_city"/>
+
+                 </xpath>
+          <xpath expr="//field[@name='postal_code']" position="after">
+            <field name="alternative_contact_first_name"/>
+               <field name="alternative_contact_province"/>
+               <field name="alternative_contact_country"/>
+              <field name="alternative_contact_postal_code"/>
+              <field name="name_of_activity"/>
+              <field name="institution"/>
+              <field name="position"/>
+              <field name="duration_of_involvement"/>
+              <field name="level"/>
+               <field name="reference"/>
+        </xpath>
+
+        </data>
+        </field>
+
+    </record>
+
+
+</odoo>
