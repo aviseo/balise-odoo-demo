@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_bursary_root" name="Bursary" sequence="10"/>
+    <menuitem id="menu_bursary_application" name="Application" parent ="menu_bursary_root" sequence="10"/>
+
+</odoo>

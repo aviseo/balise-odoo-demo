@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_bursary_personal_information_form" model="ir.ui.view">
+        <field name="name">bursary.personal_information.form</field>
+        <field name="model">bursary.personal_information</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                     <group col="2">
+                    <group>
+                        <field name="first_name"/>
+                        <field name="surname"/>
+                        <field name="dob"/>
+                        <field name="race"/>
+                        <field name="home_language"/>
+                        <field name="identity_document_type"/>
+                        <field name="id_passport_no"/>
+                        <field name="gender"/>
+                    </group>
+
+                     <group>
+                        <field name="email"/>
+                        <field name="house_number"/>
+                        <field name="street_name"/>
+                        <field name="Suburb"/>
+                        <field name="city"/>
+                        <field name="country"/>
+                        <field name="postal_code"/>
+
+                    </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_bursary_personal_information_tree" model="ir.ui.view">
+        <field name="name">bursary.personal_information.tree</field>
+        <field name="model">bursary.personal_information</field>
+        <field name="arch" type="xml">
+            <tree>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_bursary_personal_information" model="ir.actions.act_window">
+        <field name="name">Application</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bursary.personal_information</field>
+        <field name="view_mode">tree,form</field>
+        <!--        <field name="search_view_id" ref="campus_management.view_campus_student_search"/>-->
+    </record>
+    <menuitem id="menu_application" name="Application" parent="menu_bursary_application"
+              action="action_bursary_personal_information"
+              sequence="10"/>
+
+</odoo>
