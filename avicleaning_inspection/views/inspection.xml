@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record model="ir.ui.view" id="fsm_order_form_inherit">
+        <field name="name">fsm_order_form_inherit.view</field>
+        <field name="model">fsm.order</field>
+        <field name="inherit_id" ref="fieldservice.fsm_order_form" />
+        <field name="arch" type="xml">
+        <xpath expr="//page[@name='execution_page']" position='after'>
+	    	<page string='Inspection'>
+
+
+                <group col ="2">
+                    <group>
+
+                        <field name="toilet_cubicle"/>
+                        <field name="floors"/>
+                        <field name="urinals"/>
+                        <field name="walls"/>
+                        <field name="basins"/>
+                        <field name="toilet_paper"/>
+                    </group>
+                    <group>
+                        <field name="mirrors"/>
+                        <field name="bins"/>
+                        <field name="seatsan"/>
+                        <field name="handsoaps"/>
+                        <field name="handtowels"/>
+                    </group>
+                </group>
+
+                <group>
+                    <field name="cleaner_signature" widget = "signature"/>
+                    <field name="client_signature" widget ="signature"/>
+                    <field name="manager_signature" widget ="signature"/>
+                    
+                </group>
+	    		
+	    	</page>
+	    </xpath>
+            
+        </field>
+    </record>
+
+</odoo>
