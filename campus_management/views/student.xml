@@ -5,21 +5,45 @@
         <field name="model">campus.student</field>
         <field name="arch" type="xml">
             <form>
+                    <header>
+                         <field name="state" widget="statusbar" nolabel="1" options="{'clickable': '1'}" status_visible ="draft, in_progress, done"/>
+                    </header>
                 <sheet>
+                    <field name="image" widget="image" class ="oe_avatar"/>
                     <div class="oe_title">
                         <h1>
                             <field name="ref" readonly="1"/>
                         </h1>
                     </div>
+                    <div>
+                        <h2>
+                            <field name="priority" widget="priority"/>
+                        </h2>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="ict_registered"/>
-                        <field name="under_eighteen"/>
-                        <field name="age"/>
-                        <field name="gender"/>
-                        <field name="lecture_id"/>
-                        <field name="capitalized_name"/>
-                         <field name="tag_ids" widget = "many2many_tags"/>
+                        <field name="registration_id"/>
+                        <field name="reason"/>
+
+                    </group>
+                    <group col="2">
+                        <group>
+                            
+                            <field name="name"/>
+                            <field name="ict_registered"/>
+                            <field name="under_eighteen"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <button name="action_button" string ="Test Button" type ="object" class ="oe_highlight"/>
+                        </group>
+                        <group>
+                            <field name ="color" widget ="color"/>
+                            <field name="lecture_id"/>
+                            <field name="capitalized_name"/>
+                            <field name="dob"/>
+                            <field name="tag_ids" widget = "many2many_tags"/>
+                            <field name="active" widget = "boolean_toggle"/>
+
+                        </group>
                     </group>
                 </sheet>
 
@@ -33,6 +57,22 @@
         </field>
     </record>
 
+            <record id="view_campus_student_activity" model="ir.ui.view">
+                <field name="name">campus.student.activity</field>
+                <field name="model">campus.student</field>
+                <field name="arch" type="xml">
+                        <activity string="Applicants">
+                            <templates>
+                                <div t-name="activity-box">
+                                    <div>
+                                        <field name="name"/>
+                                    </div>
+                                </div>
+                            </templates>
+                        </activity>
+                </field>
+            </record>
+
     <record id="view_campus_student_tree" model="ir.ui.view">
         <field name="name">campus.student.tree</field>
         <field name="model">campus.student</field>
@@ -42,6 +82,7 @@
                 <field name="name"/>
                 <field name="age"/>
                 <field name="gender"/>
+                <field name="state" />
             </tree>
 
         </field>
@@ -75,7 +116,7 @@
         <field name="name">Student</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">campus.student</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,activity</field>
         <field name="search_view_id" ref="campus_management.view_campus_student_search"/>
     </record>
     <menuitem id="menu_students" name="Students" parent="menu_campus_operations" action="action_campus_student"

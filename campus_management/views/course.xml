@@ -33,6 +33,7 @@
             <tree>
                 <field name="ref"/>
                 <field name="name"/>
+                <field name="ict_faculty"/>
 
             </tree>
         </field>
