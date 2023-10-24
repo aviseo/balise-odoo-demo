@@ -6,9 +6,12 @@
         <field name="model">campus.student</field>
          <field name="inherit_id" ref = "campus_management.view_campus_student_form"/>
         <field name="arch" type="xml">
+        <header>
+            <button name ="action_registration" string = "Student Registration" class = "oe_highlight" type = "object"/>
+        </header>
             <data>
            <xpath expr="//field[@name='tag_ids']" position="after">
-            <!-- Added your field -->
+           
             <field name="parent_name"/>
         </xpath>
         </data>
