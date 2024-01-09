@@ -4,7 +4,7 @@ from odoo import api, fields, models
 class PersonalInformation(models.Model):
     _inherit = 'bursary.personal_information'
 
-    middle_name = fields.Char(string='Middle Name')
+    middle_name = fields.Char(string='First Name')
     country_of_citizenship = fields.Char(string='Country of Citizenship')
     home_phone = fields.Char(string='Home Phone')
     alternative_contact_first_name = fields.Char(string='Alternative Contact First Name')
